@@ -1,0 +1,9 @@
+h2 {
+    background-color: brown;
+}
+ellipse {
+    fill: #fff;
+    border-style: dotted;
+    stroke: #040;
+    stroke-width: 4px;
+}
