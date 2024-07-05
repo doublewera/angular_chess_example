@@ -14,7 +14,10 @@
       <div class="clock-tableau">
         @for (t of tableaux; track t) {
           <div class="one-tableau">
-            <app-tableau [innercolor]='t' />
+            <app-tableau
+                (click)="changeColor($index)"
+                [innercolor]='t'
+                />
             {{t}}
           </div>
         }

@@ -17,4 +17,8 @@ export class AppComponent {
   tableaux = [
     "#f00", "#080"
   ];
+  changeColor(index: number) {
+    console.log('kuku' + (index));
+    this.tableaux[index] = "#ff0";
+  }
 }
