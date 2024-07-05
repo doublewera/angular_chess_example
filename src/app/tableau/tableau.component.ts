@@ -9,10 +9,8 @@ import { Component, Input } from '@angular/core';
 })
 export class TableauComponent {
     @Input() innercolor = "#000000";  /* В конструктор! */
-    start: Date = new Date();
     cx: number = 36;
     cy = 50;
     w = 60;
     h = 60;
-    active = false;
 }

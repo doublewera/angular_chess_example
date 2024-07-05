@@ -15,10 +15,10 @@
         @for (t of tableaux; track t) {
           <div class="one-tableau">
             <app-tableau
-                (click)="changeColor($index)"
-                [innercolor]='t'
+                (click)="clickMe($index)"
+                [innercolor]='t.color()'
                 />
-            {{t}}
+            {{t.timeLeft}}
           </div>
         }
         
