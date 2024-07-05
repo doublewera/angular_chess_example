@@ -13,10 +13,7 @@
     <div class="left-side">
       
       <div class="clock-tableau">
-        <div class="one-tableau">
-          <app-tableau></app-tableau>
-        </div>
-        <div class="one-tableau">
+        <div *ngFor="let t of tableaux" class="one-tableau">
           <app-tableau></app-tableau>
         </div>
       </div>
