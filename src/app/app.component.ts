@@ -15,6 +15,6 @@ import { TableauComponent } from './tableau/tableau.component';
 export class AppComponent {
   title = 'chessclock';
   tableaux = [
-    1, 2
+    "#f00", "#080"
   ];
 }

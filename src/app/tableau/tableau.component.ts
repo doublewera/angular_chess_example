@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tableau',
@@ -7,11 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './tableau.component.html',
   styleUrl: './tableau.component.css'
 })
-
 export class TableauComponent {
-    start: Date =  new Date();
+    @Input() innercolor = "#000000";  /* В конструктор! */
+    start: Date = new Date();
     cx: number = 36;
     cy = 50;
     w = 60;
     h = 60;
+    active = false;
 }
