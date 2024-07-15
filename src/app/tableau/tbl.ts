@@ -18,7 +18,7 @@ export class Tbl {
     get active() {
         return this.#active;
     }
-    color(): string {
+    get color(): string {
         if (this.#active) {
             return '#080';
         }

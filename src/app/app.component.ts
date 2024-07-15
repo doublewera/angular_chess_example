@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { GamerecordService } from './gamerecord.service';
 import { TableauComponent } from './tableau/tableau.component';
 import { Tbl } from './tableau/tbl';
+import { Game } from './tableau/game';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,7 @@ import { Tbl } from './tableau/tbl';
     RouterOutlet,
     TableauComponent
   ],
+  providers: [GamerecordService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -28,6 +31,7 @@ export class AppComponent {
     for (let i = 0; i < this.tableaux.length; i++) {
       if (this.tableaux[i].timeLeft < 1) {
         clearInterval(this.myint);
+        this.service.saveRecord(new Game(1,28, 35))
       }
       this.tableaux[i].countdown();
       console.log(this.tableaux[i].name, 'time left', this.tableaux[i].timeLeft);
@@ -68,5 +72,9 @@ export class AppComponent {
   clickMe(index: number) {
     this.tableaux[index].active = !this.tableaux[index].active;
     this.tableaux[(1 - index)].active = !this.tableaux[(1 - index)].active;
+  }
+  
+  constructor (private service: GamerecordService) {
+    
   }
 }
